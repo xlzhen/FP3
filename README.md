@@ -16,7 +16,13 @@ Remember that this report must include:
 * output from your code demonstrating what it produced
 * at least one diagram or figure showing your work
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+The narrative itself should be no longer than 350 words. 
+
+You need at least one image (output, diagrams). Images must be uploaded to your repository, and then displayed with markdown in this file; like this:
+
+![test image](/testimage.png?raw=true "test image")
+
+You must provide credit to the source for any borrowed images.
 
 Code should be delivered in two ways:
 
