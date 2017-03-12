@@ -1,7 +1,7 @@
 # FP3: Final Project Assignment 3: Exploration 2
 Due Sunday, March 26, 2017
 
-This assignment is the same as [oplS17projects/FP1][FP1], except definitely choose a library that you expect to use for your full project.
+This assignment is the same as [FP1], except definitely choose a library that you expect to use for your full project.
 
 The report template is below.
 
@@ -38,6 +38,7 @@ Ask questions publicly in the email group.
 This is the first part of a larger project. The final project schedule is [here][schedule].
 
 <!-- Links -->
+[FP1]: https://github.com/oplS17projects/FP1
 [schedule]: https://github.com/oplS17projects/FP-Schedule
 [markdown]: https://help.github.com/articles/markdown-basics/
 [forking]: https://guides.github.com/activities/forking/
