@@ -3,6 +3,8 @@ Due Sunday, March 26, 2017
 
 This assignment is the same as [FP1], except definitely choose a library that you expect to use for your full project.
 
+You will be in your team before you complete this assignment. You and your teammate(s) must coordinate to (1) both choose libraries relevant to your project, and (2) each choose a different library.
+
 The report template is below.
 
 ## My Library: (library name here)
