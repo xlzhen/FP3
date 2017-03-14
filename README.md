@@ -16,10 +16,6 @@ The report template is below, beginning with "Library Name Here."
 1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
 1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
 
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule].
-
-
 ## Library Name Here
 My name: **put your real name here**
 
