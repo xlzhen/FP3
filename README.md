@@ -5,9 +5,22 @@ This assignment is the same as [FP1], except definitely choose a library that yo
 
 You will be in your team before you complete this assignment. You and your teammate(s) must coordinate to (1) both choose libraries relevant to your project, and (2) each choose a different library.
 
-The report template is below.
+The report template is below, beginning with "Library Name Here."
 
-## My Library: (library name here)
+## How to Prepare and Submit this assignment
+
+1. To start, [**fork** this repository][forking]. 
+  2. (This assignment is just one README.md file, so you can edit it right in github)
+1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
+1. Add your racket file to the repository. 
+1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
+1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
+
+## Project Schedule
+This is the first part of a larger project. The final project schedule is [here][schedule].
+
+
+## Library Name Here
 My name: **put your real name here**
 
 Write what you did!
@@ -30,20 +43,6 @@ Code should be delivered in two ways:
 
 1. Full files should be added to your version of this repository.
 1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule].
 
 <!-- Links -->
 [FP1]: https://github.com/oplS17projects/FP1
