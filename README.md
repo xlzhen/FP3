@@ -76,4 +76,5 @@ Game-class holds a board-class object, two lists representing two opponents plac
 ...
 ```
 Below is a testing output of the classes:
+
 ![ClassTest](https://raw.githubusercontent.com/xlzhen/FP3/master/ClassTest.PNG)
