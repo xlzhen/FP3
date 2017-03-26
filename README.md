@@ -1,4 +1,4 @@
-## Library Name Here racket/class
+## Library Name Here: racket/class
 
 My name: **Xiaoling Zheng**
 
@@ -76,5 +76,4 @@ Game-class holds a board-class object, two lists representing two opponents plac
 ...
 ```
 Below is a testing output of the classes:
-
-![ClassTest](/ClassTest.png?raw=true "ClassTest")
+![ClassTest](https://raw.githubusercontent.com/xlzhen/FP3/master/ClassTest.PNG)
