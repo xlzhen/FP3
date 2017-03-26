@@ -1,51 +1,82 @@
-# FP3: Final Project Assignment 3: Exploration 2
-Due Sunday, March 26, 2017
-
-This assignment is the same as [FP1], except definitely choose a library that you expect to use for your full project.
-
-You will be in your team before you complete this assignment. You and your teammate(s) must coordinate to (1) both choose libraries relevant to your project, and (2) each choose a different library.
-
-The report template is below, beginning with "Library Name Here."
-
-## How to Prepare and Submit This Assignment
-
-1. To start, [**fork** this repository][forking]. 
-1. Add your `.rkt` Racket source file(s) to the repository. 
-1. Add any images to the repository.
-1. Modify the `README.md` file and [**commit**][ref-commit] changes to complete your report.
-1. Ensure your changes (report in `md` file, added `rkt` file(s), and images) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
 ## Library Name Here
-My name: **put your real name here**
+## racket/class
+## math/matrix
 
-Write what you did!
-Remember that this report must include:
+My name: **Xiaoling Zheng**
 
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
+We decided to create a simple Gomoku game using racket. The libraries we planned to use are racket/gui, math, image, class, etc. We gradually discovered these libraries through out FP 3.
 
-The narrative itself should be no longer than 350 words. 
+I explored racket/class by creating several classes related to our project (point-class, board-class and game-class).
 
-You need at least one image (output, diagrams). Images must be uploaded to your repository, and then displayed with markdown in this file; like this:
+Gomoku is a 15 by 15 board game with 2 players placing pieces on board in turns; each owns a set of pieces differentiate by color (normally black and white).
 
-![test image](/testimage.png?raw=true "test image")
+Point-class represents one point on the 15 by 15 board. It has coordinates and occupancy status initially set to 'empty, which will be updated later on to 'black ('white) if a black (white) piece is placed on.
 
-You must provide credit to the source for any borrowed images.
+```racket
+...
+(define point-class%
+  (class object%
+    (init-field x-coord y-coord)
+    (init-field (Point (point x-coord y-coord)))
+    (init-field (occupancy 'empty))
+    (define/public (black-point) (set! occupancy 'black))
+    (define/public (white-point) (set! occupancy 'white))
+    (super-new)))
+...
+```
 
-Code should be delivered in two ways:
+Then, I used math/matrix library to construct a 2-dimensional 15 by 15 array.
 
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
+```racket
+(define (make-board x)
+  (build-matrix x x (lambda (a b) (make-object point-class% a b))))
+```
+Procedure make-board creates a 15 by 15 matrix that each element represents a point-class object holding an assignment coordinate.
 
-<!-- Links -->
-[FP1]: https://github.com/oplS17projects/FP1
-[schedule]: https://github.com/oplS17projects/FP-Schedule
-[markdown]: https://help.github.com/articles/markdown-basics/
-[forking]: https://guides.github.com/activities/forking/
-[ref-clone]: http://gitref.org/creating/#clone
-[ref-commit]: http://gitref.org/basic/#commit
-[ref-push]: http://gitref.org/remotes/#push
-[pull-request]: https://help.github.com/articles/creating-a-pull-request
+(0, 0) ... (0, 14)
+(1, 0) ... (1, 14)
+..................
+(14, 0)... (14, 14)
+
+Board-class holds a board matrix as an init-field and provides procedures to give access to point-class objects in board matrix.
+
+```racket
+...
+(define board-class%
+  (class object%
+    (init-field (Dimension square-board-dimension)) ;; dimension from input
+    (init-field (BOARD (make-board square-board-dimension))) ;; set up square board with dimension
+    (define/public (check-occupancy a b) ;; check occupancy for single point
+      (get-field occupancy (matrix-ref BOARD a b)))
+    (define/public (set-black a b) ;; set occupany to symbol black
+      (send (matrix-ref BOARD a b) black-point))
+    (define/public (set-white a b) ;; set occupany to symbol white
+      (send (matrix-ref BOARD a b) white-point))
+    (super-new)))
+...
+```
+Game-class holds a board-class object, two lists representing two opponents placed location, and procedures that update board-class's board matrix. It only allows basic set black/white piece that both updates board matrix and occupancy list up to this point.
+```racket
+...
+(define game-class%
+  (class object%
+    (init-field (Board (make-object board-class%)))
+    (init-field (Black-points '())) ;; list of occupied black points initialized to null
+    (init-field (White-points '())) ;; list of occupied white points initialized to null
+    (define/public (check-occupancy x y)
+      (send Board check-occupancy x y))
+    (define/public (set-black x y) ;; public method both update board and add point to lists
+      (send Board set-black x y)
+      (set! Black-points (cons (cons x y) Black-points)))
+    (define/public (set-white x y) ;; public method both update board and add point to lists
+      (send Board set-white x y)
+      (set! White-points (cons (cons x y) White-points)))
+    ;; .....
+    ;; other methods to be added
+    ;; .....
+    (super-new)))
+...
+```
+Below is a testing output of the classes:
+
+![ClassTest](/ClassTest.png?raw=true "ClassTest")
