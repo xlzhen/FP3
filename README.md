@@ -1,6 +1,4 @@
-## Library Name Here
-## racket/class
-## math/matrix
+## Library Name Here racket/class
 
 My name: **Xiaoling Zheng**
 
